@@ -1,0 +1,256 @@
+<div class="card cardd">
+        <div class="card-title header">
+            <!-- <i class="fas fa-info-circle"></i> -->
+            <h5>Rate Review</h5>
+        </div>
+        <div class="card-body">
+            <form class="form1" [formGroup]="validateForm">
+                <div class="form-group">
+                    <div class="row">
+                        <label style="margin-left: 0px;">Description</label>
+                        <input type="text" class="form-control" formControlName="description" [formControl]="validateForm.controls['description']">
+                        <div class="text-danger" *ngIf="validateForm.controls['description'].hasError('required') && (validateForm.controls['description'].dirty || validateForm.controls['description'].touched)">This field is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label style="margin-left: 0px;">SIC Code</label>
+                        <select class="browser-default custom-select" formControlName="sic" [formControl]="validateForm.controls['sic']">
+                            <option value="5182_RESTOURENT">5182 RESTOURENT</option>
+                            <option value="5183_RESTOURENT">5183 RESTOURENT</option>
+                            <option value="5184_RESTOURENT">5184 RESTOURENT</option>
+                            <option value="5185_RESTOURENT">5185 RESTOURENT</option>
+                        </select>
+                        <div class="text-danger" *ngIf="validateForm.controls['sic'].hasError('required') && (validateForm.controls['sic'].dirty || validateForm.controls['sic'].touched)">This field is required</div>
+    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" style="margin-left: -15px;">
+                                <div class="input-group-prepend inputt">
+    
+                                    <div class="input-group-text" id="basic-addon1"><img src="./../../assets/visa.png"
+                                            height="20px" width="25px"> $</div>
+                                </div>
+                                <input type="text" class="form-control" name="visa_t1" aria-describedby="basic-addon1"
+                                    (change)="Text1($event.target.value)" formControlName="visa1" [formControl]="validateForm.controls['visa1']">
+                                   
+                           
+                            </div>
+                            <div class="text-danger" *ngIf="validateForm.controls['visa1'].hasError('pattern') && (validateForm.controls['visa1'].dirty || validateForm.controls['visa1'].touched)">This field must contain only digits</div>
+                            <div class="text-danger" *ngIf="validateForm.controls['visa1'].hasError('required') && (validateForm.controls['visa1'].dirty || validateForm.controls['visa1'].touched)">This field is required</div>
+                       
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">#</div>
+                                </div>
+                                <input style="margin-right: -15px;" type="text" class="form-control" formControlName="visa2" [formControl]="validateForm.controls['visa2']"
+                                    aria-describedby="basic-addon1" name="visa_t2" (change)="Text2($event.target.value)">
+                                    
+                                    
+                            </div>
+                            <div class="text-danger" *ngIf="validateForm.controls['visa2'].hasError('pattern') && (validateForm.controls['visa2'].dirty || validateForm.controls['visa2'].touched)">This field must contain only digits</div>
+                                    <div class="text-danger" *ngIf="validateForm.controls['visa2'].hasError('required') && (validateForm.controls['visa2'].dirty || validateForm.controls['visa2'].touched)">This field is required</div>
+                                
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" style="margin-left: -15px;">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1"><img
+                                            src="./../../assets/mastercard.png" height="20px" width="25px"> $</div>
+                                </div>
+                                <input type="text" class="form-control" name="master_t1" aria-describedby="basic-addon1"
+                                     (change)="Text1($event.target.value)" formControlName="master1" [formControl]="validateForm.controls['master1']"> 
+                                    
+                                    
+                            </div>
+                            <div class="text-danger" *ngIf="validateForm.controls['master1'].hasError('pattern') && (validateForm.controls['master1'].dirty || validateForm.controls['master1'].touched)">This field must contain only digits</div>
+                                    <div class="text-danger" *ngIf="validateForm.controls['master1'].hasError('required') && (validateForm.controls['master1'].dirty || validateForm.controls['master1'].touched)">This field is required</div>
+                               
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">#</div>
+                                </div>
+                                <input style="margin-right: -15px;" type="text" class="form-control" formControlName="master2" [formControl]="validateForm.controls['master2']"
+                                    aria-describedby="basic-addon1" name="master_t2"  (change)="Text2($event.target.value)">
+                                   
+                                    
+                            </div>
+                            <div class="text-danger" *ngIf="validateForm.controls['master2'].hasError('pattern') && (validateForm.controls['master2'].dirty || validateForm.controls['master2'].touched)">This field must contain only digits</div>
+                                    <div class="text-danger" *ngIf="validateForm.controls['master2'].hasError('required') && (validateForm.controls['master2'].dirty || validateForm.controls['master2'].touched)">This field is required</div>
+                                
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" style="margin-left: -15px;">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1"><img src="./../../assets/discover.png"
+                                            height="20px" width="25px"> $</div>
+                                </div>
+                                <input type="text" class="form-control" name="discover_t1" aria-describedby="basic-addon1"
+                                     (change)="Text1($event.target.value)" formControlName="discover1" [formControl]="validateForm.controls['discover1']">
+                                    
+                                    
+                            </div>
+                            
+                            <div class="text-danger" *ngIf="validateForm.controls['discover1'].hasError('pattern') && (validateForm.controls['discover1'].dirty || validateForm.controls['discover1'].touched)">This field must contain only digits</div>
+                            <div class="text-danger" *ngIf="validateForm.controls['discover1'].hasError('required') && (validateForm.controls['discover1'].dirty || validateForm.controls['discover1'].touched)">This field is required</div>
+                       
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">#</div>
+                                </div>
+                                <input style="margin-right: -15px;" type="text" class="form-control" formControlName="discover2" [formControl]="validateForm.controls['discover2']"
+                                    aria-describedby="basic-addon1" name="discover_t2"  (change)="Text2($event.target.value)">
+                            
+                            </div>
+                            <div class="text-danger" *ngIf="validateForm.controls['discover2'].hasError('pattern') && (validateForm.controls['discover2'].dirty || validateForm.controls['discover2'].touched)">This field must contain only digits</div>
+                            <div class="text-danger" *ngIf="validateForm.controls['discover2'].hasError('required') && (validateForm.controls['discover2'].dirty || validateForm.controls['discover2'].touched)">This field is required</div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" style="margin-left: -15px;">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1"><img
+                                            src="./../../assets/americanexpress.png" height="20px" width="25px"> $</div>
+                                </div>
+                                <input type="text" class="form-control" aria-describedby="basic-addon1" name="american_t1"
+                                   
+                                
+                                (change)="Text1($event.target.value)" formControlName="american1" [formControl]="validateForm.controls['american1']"><br>
+                                    
+                                        
+                            </div>
+                            <div class="text-danger" *ngIf="validateForm.controls['american1'].hasError('pattern') && (validateForm.controls['american1'].dirty || validateForm.controls['american1'].touched)">This field must contain only digits</div>
+                                    <div class="text-danger" *ngIf="validateForm.controls['american1'].hasError('required') && (validateForm.controls['american1'].dirty || validateForm.controls['american1'].touched)">This field is required</div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">#</div>
+                                </div>
+                                <input style="margin-right: -15px;" type="text" class="form-control" formControlName="american2" [formControl]="validateForm.controls['american2']"
+                                    aria-describedby="basic-addon1" name="american_t2"  (change)="Text2($event.target.value)"><br>
+     
+                            </div>
+                            <div class="text-danger" *ngIf="validateForm.controls['american2'].hasError('pattern') && (validateForm.controls['american2'].dirty || validateForm.controls['american2'].touched)">This field must contain only digits</div>
+                                    <div class="text-danger" *ngIf="validateForm.controls['american2'].hasError('required') && (validateForm.controls['american2'].dirty || validateForm.controls['american2'].touched)">This field is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Total Volume</label>
+                            <div class="input-group" style="margin-left: -15px;">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">$</div>
+                                </div>
+                                <input type="text" class="form-control" name="value_t1" aria-describedby="basic-addon1"
+                                 [value]="value_t1"   disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+    
+                            <label style="margin-left: 0px;">Total Transactions</label>
+                            <div class="input-group" style="margin-left: 0px;">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">$</div>
+                                </div>
+                                <input type="text" class="form-control" aria-describedby="basic-addon1" style="width: 10px;" name="value_t2" 
+                                  [value]="value_t2" disabled>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Avg Ticket</label>
+                            <div class="input-group" style="margin-left: -15px;">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">$</div>
+                                </div>
+                                <input type="text" class="form-control" aria-describedby="basic-addon1" [value]="avg_ticket" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label style="margin-left: 0px;">Current Rate</label>
+                            <div class="input-group" style="margin-left: 0px;">
+                                <input type="text" class="form-control" value="3.56" aria-describedby="basic-addon1"
+                                    disabled>
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Current Fees</label>
+                            <div class="input-group" style="margin-left: -15px;">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">$</div>
+                                </div>
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label style="margin-left: 0px;">Current Amex Fees</label>
+                            <div class="input-group" style="margin-left: 0px;">
+                                <div class="input-group-prepend inputt">
+                                    <div class="input-group-text" id="basic-addon1">$</div>
+                                </div>
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Merchant Type</label>
+                            <select class="browser-default custom-select" style="margin-left: -15px;">
+                                <option value="5182_RESTOURENT" selected>1</option>
+                                <option value="5183_RESTOURENT">2</option>
+                                <option value="5184_RESTOURENT">3</option>
+                                <option value="5185_RESTOURENT">3</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label style="margin-left: 0px;">High Speed</label>
+                            <select class="browser-default custom-select" style="margin-left: 0px;">
+                                <option value="5182_RESTOURENT" selected>0</option>
+                                <option value="5183_RESTOURENT">1</option>
+                                <option value="5184_RESTOURENT">2</option>
+                                <option value="5185_RESTOURENT">3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

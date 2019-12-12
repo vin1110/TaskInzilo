@@ -1,0 +1,32 @@
+.header{
+    background-color: rgb(136, 219, 187);
+    height: 35px;
+    font-size: 16px;
+}
+
+.cardd{
+    margin-top: 18px;
+    margin-left: 19px;
+    margin-bottom: 14px;
+    width: 40rem;
+}
+
+h5{
+    font-size: 17px;
+    margin-left: 31px;
+    margin-top: 6px;
+    color: white;
+}
+
+.form1{
+    margin-left: 14px;
+    margin-right: 10px;
+}
+
+input, .inputt{
+    height: 32px;
+}
+
+label{
+    margin-left: -15px;
+}

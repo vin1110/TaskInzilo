@@ -1,0 +1,27 @@
+<div class="card cardd">
+        <div class="card-title header">
+            <!-- <i class="fas fa-info-circle"></i> -->
+            <h5>Select Pricing Options</h5>
+        </div>
+        <div class="card-body">
+                <table id="example" class="table table-striped table-bordered" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Savings</th>
+                                <th>Residuals</th>
+                                <th>Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of array1">
+                                <td>{{data.name}}</td>
+                                <td>{{data.saving}}</td>
+                                <td>{{data.residuals}}</td>
+                                <td>{{data.rate}}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+        </div>
+    </div>
